@@ -20,13 +20,14 @@
                 if(!getMemberNumber() || getMemberNumber().length < 9) return;
 
                 var promise = $http({
-                    method: 'GET', 
-                    url: "http://example"
+                    method: 'POST',
+                    url: "http://localhost:3050/GetCustomerByPhoneNumber",
+                    data: { phone: getMemberNumber() }
                 });
 
                 promise.then(function(result) {
                     console.log(result);
-                    setMemberResults([{phone:"123-123-1234", firstname: "Roberto", lastname:"Rolon"}]);
+                    setMemberResults(result.data);
                 }).catch(function(err) {
                     console.log(err);
                     setMemberResults([]);

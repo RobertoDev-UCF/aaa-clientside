@@ -4,9 +4,9 @@
         .module(angularModuleName)
         .controller("SearchMemberController", SearchMemberController);
 
-        SearchMemberController.$inject = [];
+        SearchMemberController.$inject = ['$http'];
 
-        function SearchMemberController() {
+        function SearchMemberController($http) {
             var vm = this;
 
             vm.SearchForMember = SearchForMember;
@@ -19,9 +19,18 @@
             function SearchForMember() {
                 if(!getMemberNumber() || getMemberNumber().length < 9) return;
 
-                setMemberResults([{phone:"123-123-1234", firstname: "Roberto", lastname:"Rolon"}]);
-            
-                setMemberResults([]);
+                var promise = $http({
+                    method: 'GET', 
+                    url: "http://example"
+                });
+
+                promise.then(function(result) {
+                    console.log(result);
+                    setMemberResults([{phone:"123-123-1234", firstname: "Roberto", lastname:"Rolon"}]);
+                }).catch(function(err) {
+                    console.log(err);
+                    setMemberResults([]);
+                });
             }
             
             function getMemberNumber() {

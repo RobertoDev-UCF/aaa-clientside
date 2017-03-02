@@ -1,0 +1,78 @@
+
+<div class="jumbotron" style="background-color:#0275d8;">
+    <div class="container" style="color:#fff;">
+        <h3> Add a customer! <small style="color:#fff;"> Fill the fields below </small> </h3>
+    </div>
+</div>  
+
+
+
+<div class="container">
+
+ <div class="row"> 
+    <div class="col-md-12">
+         <div class="pull-right">
+            <button class="btn btn-primary btn-lg" ng-click="vm.AddCustomer();"> ADD </button>
+        </div>
+    </div>
+</div>
+
+ </br>
+ </br>
+
+
+    <div class="row"> 
+
+        <div class="col-md-4"> 
+            <input class="form-control" placeholder="First Name" ng-model="vm.Customer.first_name" />
+        </div>
+        
+        <div class="col-md-4"> 
+            <input class="form-control" placeholder="Last Name" ng-model="vm.Customer.last_name" />
+        </div>
+        
+        <div class="col-md-4"> 
+            <input class="form-control" placeholder="Email" ng-model="vm.Customer.email"  />
+        </div>
+    
+     </div>
+
+     </br>
+     </br>
+
+     <div class="row"> 
+
+        <div class="col-md-4"> 
+            <input class="form-control" placeholder="Phone" ng-model="vm.Customer.phone"  />
+        </div>
+        
+        <div class="col-md-4"> 
+            <input class="form-control" placeholder="Address" ng-model="vm.Customer.address"  />
+        </div>
+        
+        <div class="col-md-4"> 
+            <input class="form-control" placeholder="City" ng-model="vm.Customer.city"  />
+        </div>
+    
+     </div>
+
+     </br>
+     </br>
+
+      <div class="row"> 
+
+        <div class="col-md-4"> 
+            <input class="form-control" placeholder="State" ng-model="vm.Customer.state"  />
+        </div>
+        
+        <div class="col-md-4"> 
+            <input class="form-control" placeholder="Postal Code" ng-model="vm.Customer.postal_code"  />
+        </div>
+        
+        <div class="col-md-4"> 
+            <textarea class="form-control" placeholder="Customer Notes..." ng-model="vm.Customer.note" ></textarea>
+        </div>
+    
+     </div>
+
+</div>

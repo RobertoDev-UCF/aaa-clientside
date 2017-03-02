@@ -25,6 +25,13 @@
                 templateUrl: 'app/main/SearchMember/searchMember.html',
                 controller: 'SearchMemberController',
                 controllerAs: 'vm'
+            })
+            
+            .state('appLayout.addCustomer', {
+                url: '/addCustomer',
+                templateUrl: 'app/main/AddCustomer/addCustomer.html',
+                controller: 'AddCustomerController',
+                controllerAs: 'vm'
             });
         }
 

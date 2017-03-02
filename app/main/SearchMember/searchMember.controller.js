@@ -4,16 +4,16 @@
         .module(angularModuleName)
         .controller("SearchMemberController", SearchMemberController);
 
-        SearchMemberController.$inject = ['$http'];
+        SearchMemberController.$inject = ['$http', '$state'];
 
-        function SearchMemberController($http) {
+        function SearchMemberController($http, $state) {
             var vm = this;
 
             vm.SearchForMember = SearchForMember;
             vm.AddCustomer = AddCustomer;
 
             function AddCustomer() {
-                
+                $state.go('appLayout.addCustomer');
             }
 
             function SearchForMember() {

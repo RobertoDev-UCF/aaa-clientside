@@ -1,0 +1,66 @@
+
+<div class="jumbotron" style="background-color:#0275d8;">
+    <div class="container" style="color:#fff;">
+        <h3>Find a member or customer ? <small style="color:#fff;"> Search below by phone number </small> </h3>
+    </div>
+</div> 
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+          <input style="text-align: center;" ng-model="vm.InputMemberNumber" type="text" class="form-control input-lg" ui-mask="(999) 999-9999">                
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button ng-click="vm.SearchForMember();" type="button" class="btn btn-primary btn-lg" style="font-size:2em; width:100%;">
+                    <i class="fa fa-hand-o-down fa-5" aria-hidden="true"></i>
+                </button>
+        </div>
+    </div> 
+
+</br>
+
+    <div class="row" ng-if="vm.MemberResults && vm.MemberResults.length > 0">
+        <div class="col-md-12">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th> Phone </th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email </th>
+                        <th> City </th>
+                        <th> State </th>
+                        <th> Address </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="member in vm.MemberResults">
+                        <td>{{member.phone}}</td>
+                        <td>{{member.firstname}}</td>
+                        <td>{{member.lastname}}</td>
+                        <td>{{member.email}}</td>
+                        <td>{{member.city}}</td>
+                        <td>{{member.state}}</td>
+                        <td>{{member.address}}</td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row" ng-if="vm.MemberResults && vm.MemberResults.length === 0">
+        <div class="col-md-12">
+            <div style="text-align: center;"> 
+                <p style="padding: 15px;font-size:16px;" class="bg-warning">Member or customer not found!</p>
+                <div ng-click="vm.AddCustomer();"> 
+                    <i style="font-size:5em;color:#5cb85c;" class="fa fa-user-plus fa-5" aria-hidden="true"></i>
+                </div>
+            </div>
+            </div>
+        </div>
+
+</div>

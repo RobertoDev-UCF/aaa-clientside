@@ -4,33 +4,36 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+
+    <!-- LIB CSS -->
+    <link rel="stylesheet" type="text/css" href="app/lib/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="app/lib/font-awesome/css/font-awesome.min.css">
+
+    <!-- APP CSS -->
+    <link rel="stylesheet" type="text/css" href="app/asset/css/app.css" />
+    <link rel="stylesheet" type="text/css" href="app/main/App/main.css" />
+    <link rel="stylesheet" type="text/css" href="app/main/AppLayout/appLayout.css" />
+
 </head>
-<!-- HELLO WORLD FROM DCRESH! -->
-<!-- Joshua's Comment -->
+
 <body>
+    <div ui-view> </div>
 
-    <nav class="navbar navbar-default" style="background-color: #6f5499">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#" style="color: #fff;">
-                    Triple A
-                </a>
-            </div>
-        </div>
-    </nav>
+<!-- LIB SCRIPT -->
+<script src="app/lib/angular/angular.min.js"> </script>
+<script src="app/lib/angular-ui-router/angular-ui-router.min.js"> </script>
+<script src="app/lib/tween/tween.js"></script>
 
-   <div class="jumbotron" style="background-color:#0275d8;">
-      <div class="container" style="color:#fff;">
-         <h1> Hello World <i class="fa fa-anchor" aria-hidden="true"></i> </h1>
-     </div>
-  </div>
-
+<!-- APP SCRIPT -->
+<script src="app/set.global.js"></script>
+<script src="app/app.module.js"></script>
+<script src="app/core/states.config.js"></script>
+<script src="app/core/Services/apiUrl.value.js"></script>
+<script src="app/main/App/main.controller.js"></script>
+<script src="app/main/AppLayout/appLayout.controller.js"></script>
+<script src="app/main/SearchMember/searchMember.controller.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-mask/1.8.7/mask.min.js"> </script>
 
 </body>
+
 </html>
-
-
-
-

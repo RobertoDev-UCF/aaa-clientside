@@ -1,10 +1,10 @@
-/**
- * Expose variables to global scope
- */
+//Exposed to global scope 
+
+/* 
+    angularModuleName points to the name set for the angular module
+*/
 
 
-(function() {
-
-    this.angularModuleName = "aaa";
-
-})();
+(function(root) {
+    root.angularModuleName = "aaa";
+})(window);

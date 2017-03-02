@@ -1,0 +1,21 @@
+body {
+    overflow-x: hidden;
+ }
+
+.hg-outline-home-btn {
+  padding:15px 35px;
+  color: #767b80;
+  background-color:#fff;
+  border-color: #767b80;
+}
+
+.hg-outline-home-btn:hover {
+  color: #fff;
+  background-color:#767b80;
+}
+
+.hg-outline-home-btn:focus {
+  background-color:#fff;
+  color:#767b80;
+  outline:none;
+}

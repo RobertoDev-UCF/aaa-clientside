@@ -1,0 +1,32 @@
+.main {
+    font-family: proxima_novalight;
+}
+
+.main .page {
+  position:relative;
+  top:100px;
+}
+
+.main .page .header {
+    padding-bottom:10px;
+    font-weight: 500;
+    color:#767b80;
+    text-align: center;   
+}
+
+.main .page .header h1 {
+     font-size: 4.5rem;
+}
+
+.main .page .start {
+    text-align: center;
+}
+
+#mainHeader {
+  position:relative;
+  top:-150px;
+}
+
+#mainButton {
+  position:relative;
+}

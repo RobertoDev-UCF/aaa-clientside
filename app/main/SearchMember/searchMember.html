@@ -1,13 +1,30 @@
 
 <div class="jumbotron" style="background-color:#0275d8;">
     <div class="container" style="color:#fff;">
-        <h3>Find a member or customer ? <small style="color:#fff;"> Search below by phone number </small> </h3>
+        <h3>Find a member or customer ? <small style="color:#fff;"> Search for customer below by member id or phone number</small> </h3>
     </div>
 </div> 
 
 <div class="container">
 
     <div class="row">
+        <div class="col-md-12">
+          <input style="text-align: center;" ng-model="vm.InputMemberIdNumber" type="text" class="form-control input-lg" ui-mask="9999-9999-9999-9999">                
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button ng-click="vm.SearchForMemberId();" type="button" class="btn btn-primary btn-lg" style="font-size:2em; width:100%;">
+                    <i class="fa fa-hand-o-down fa-5" aria-hidden="true">  Search by Member ID</i>
+                </button>
+        </div>
+    </div> 
+
+	
+</br></br>
+
+	<div class="row">
         <div class="col-md-12">
           <input style="text-align: center;" ng-model="vm.InputMemberNumber" type="text" class="form-control input-lg" ui-mask="(999) 999-9999">                
         </div>
@@ -16,11 +33,11 @@
     <div class="row">
         <div class="col-md-12">
             <button ng-click="vm.SearchForMember();" type="button" class="btn btn-primary btn-lg" style="font-size:2em; width:100%;">
-                    <i class="fa fa-hand-o-down fa-5" aria-hidden="true"></i>
+                    <i class="fa fa-hand-o-down fa-5" aria-hidden="true">   Search by Phone Number</i>
                 </button>
         </div>
     </div> 
-
+	
 </br>
 
     <div class="row" ng-if="vm.MemberResults && vm.MemberResults.length > 0">

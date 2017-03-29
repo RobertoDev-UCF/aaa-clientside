@@ -10,7 +10,7 @@
             var vm = this;
 
             vm.SearchForMember = SearchForMember;
-			vm.SearchForMemberId = SearchForMemberId;
+			vm.SearchByMemberId = SearchByMemberId;
             vm.AddCustomer = AddCustomer;
 
             function AddCustomer() {
@@ -35,7 +35,7 @@
                 });
             }
             
-			function SearchForMemberId() {
+			function SearchByMemberId() {
                 if(!getMemberId() || getMemberId().length < 16) return;
 
                 var promise = $http({
@@ -58,7 +58,7 @@
             }
 
 			function getMemberId() {
-                return vm.InputMemberIdNumber;
+                return vm.InputMemberId;
             }
 			
             function setMemberResults(value) {

@@ -12,9 +12,12 @@
         vm.AddCustomer = AddCustomer;
 
         function AddCustomer() {
-              var promise = $http({
+            vm.Customer.p_alert_email = true;
+            vm.Customer.p_alert_sms = true;
+
+            var promise = $http({
                     method: 'POST',
-                    url: "http://localhost:3050/GetCustomerByPhoneNumber",
+                    url: "http://localhost:3050/InsertCustomer",
                     data: vm.Customer
                 });
 

@@ -19,7 +19,12 @@
                 controller: 'AppLayoutController',
                 controllerAs: 'vm'
             })
-
+            .state('appLayout.dashboard', {
+                url: '/dashboard',
+                templateUrl: 'app/main/Dashboard/dashboard.html',
+                controller: 'DashboardController',
+                controllerAs: 'vm'
+             })
             .state('appLayout.searchMember', {
                 url: '/searchMember',
                 templateUrl: 'app/main/SearchMember/searchMember.html',

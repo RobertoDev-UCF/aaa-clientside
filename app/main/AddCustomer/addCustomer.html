@@ -80,13 +80,19 @@
             </br>
              </br>
         </div>
-        
-        <div class="col-md-4"> 
-            <textarea class="form-control" placeholder="Customer Notes..." ng-model="vm.Customer.p_note" ></textarea>
-            </br>
-             </br>
-        </div>
-    
+     </div>
+	 
+	 <div class="row"> 
+		<div class="col-md=4 form-control">
+			<input type="checkbox" id="emailalerts" ng-model="vm.Customer.p_alert_email" style="text-align: center;">
+			<label for="emailalerts">Email Alerts</label>
+		</div>
+		
+		</br>
+		<div class="col-md=4 form-control">
+			<input type="checkbox" id="smsalerts" ng-model="vm.Customer.p_alert_sms" style="text-align: center;">
+			<label for="smsalerts">Text Alerts</label>
+		</div>
      </div>
 
 </div>

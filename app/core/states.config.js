@@ -37,7 +37,14 @@
                 templateUrl: 'app/main/AddCustomer/addCustomer.html',
                 controller: 'AddCustomerController',
                 controllerAs: 'vm'
-            });
+            })
+			
+			.state('appLayout.getQueue', {
+				url: '/getQueue',
+				templateUrl: 'app/main/GetQueue/getQueue.html',
+				controller: 'GetQueueController',
+				controllerAs: 'vm'
+			});
         }
 
 })();

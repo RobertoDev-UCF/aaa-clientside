@@ -12,8 +12,6 @@
         vm.AddCustomer = AddCustomer;
 
         function AddCustomer() {
-            vm.Customer.p_alert_email = true;
-            vm.Customer.p_alert_sms = true;
 
             var promise = $http({
                     method: 'POST',

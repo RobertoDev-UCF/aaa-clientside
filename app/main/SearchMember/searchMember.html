@@ -2,7 +2,8 @@
 <div class="jumbotron" style="background-color:#0275d8;">
     <div class="container" style="color:#fff;">
         <!--<h3>Find a member or customer ? <small style="color:#fff;"> Search for customer below by member id or phone number</small> </h3> -->
-        <h3>Search for a member or customer</h3>
+        <h3>Search for a member, add a customer or display the queue</h3>
+            
     </div>
 </div> 
 
@@ -39,6 +40,22 @@
         </div>
     </div> 
 	
+</br></br>
+
+	 <div class="row">
+        <div class="col-md-12">
+          <input style="text-align: center;" ng-model="vm.InputMemberName" type="text" class="form-control input-lg">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button ng-click="vm.SearchByMemberName();" type="button" class="btn btn-primary btn-lg" style="font-size:2em; width:100%;">
+                    <i class="fa fa-hand-o-down fa-5" aria-hidden="true">  Search by Member Name</i>
+                </button>
+        </div>
+    </div>
+	
 </br>
 
     <div class="row" ng-if="vm.MemberResults && vm.MemberResults.length > 0">
@@ -54,6 +71,8 @@
                         <th>City</th>
                         <th>State</th>
                         <th>Postal Code</th>
+						<th>Email Alert</th>
+						<th>Text Alert</th>
 
                     </tr>
                 </thead>
@@ -67,6 +86,8 @@
                         <td>{{member.city}}</td>
                         <td>{{member.state}}</td>
                         <td>{{member.postal_code}}</td>
+						<td>{{member.alert_email}}</td>
+						<td>{{member.alert_sms}}</td>
                     </tr> 
                 </tbody>
             </table>
@@ -76,13 +97,17 @@
     <div class="row" ng-if="vm.MemberResults && vm.MemberResults.length === 0">
         <div class="col-md-12">
             <div style="text-align: center;"> 
-                <p style="padding: 15px;font-size:16px;" class="bg-warning">Member or customer not found!</p>
-                <div ng-click="vm.AddCustomer();"> 
-                    <i style="font-size:5em;color:#5cb85c;" class="fa fa-user-plus fa-5" aria-hidden="true"></i>
-                </div>
-            </div>
+                <p style="padding: 15px;font-size:16px;" class="bg-warning">Member or customer not found! Select Add Customer</p>
             </div>
         </div>
+    </div>
+	
+	</br></br>
+	
+	<div>
+		<i ng-click="vm.AddCustomer();" style="font-size:5em;color:#5cb85c; text-align: right;" class="fa fa-user-plus fa-5" aria-hidden="true"></i>
+		<i ng-click="vm.GetQueue();" class="fa fa-file-o" style="font-size:5em;color:#5cb85c; text-align: right; padding-left: 150px;" aria-hidden="true">Display Queue</i>
+	</div>
 
 </div>
 

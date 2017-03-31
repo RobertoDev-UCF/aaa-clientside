@@ -12,10 +12,15 @@
             vm.SearchForMember = SearchForMember;
 			vm.SearchByMemberId = SearchByMemberId;
             vm.AddCustomer = AddCustomer;
+			vm.GetQueue = GetQueue;
 
             function AddCustomer() {
                 $state.go('appLayout.addCustomer');
             }
+			
+			function GetQueue() {
+				$state.go('appLayout.getQueue');
+			}
 
             function SearchForMember() {
                 if(!getMemberNumber() || getMemberNumber().length < 9) return;

@@ -71,14 +71,14 @@
                         <th>City</th>
                         <th>State</th>
                         <th>Postal Code</th>
-						<th>Email Alert</th>
-						<th>Text Alert</th>
+			<th>Email Alert</th>
+			<th>Text Alert</th>
 
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="member in vm.MemberResults">
-                        <td>{{member.phone}}</td>
+                        <td>({{member.phone[0]}}{{member.phone[1]}}{{member.phone[2]}}) {{member.phone[3]}}{{member.phone[4]}}{{member.phone[5]}}-{{member.phone[6]}}{{member.phone[7]}}{{member.phone[8]}}{{member.phone[9]}}</td>
                         <td>{{member.first_name}}</td>
                         <td>{{member.last_name}}</td>
                         <td>{{member.email}}</td>
@@ -86,8 +86,10 @@
                         <td>{{member.city}}</td>
                         <td>{{member.state}}</td>
                         <td>{{member.postal_code}}</td>
-						<td>{{member.alert_email}}</td>
-						<td>{{member.alert_sms}}</td>
+			<td ng-if="member.alert_email > 0">Yes</td>
+			<td ng-if="member.alert_email < 1">No</td>
+			<td ng-if="member.alert_sms > 0">Yes</td>
+			<td ng-if="member.alert_sms < 1">No</td>
                     </tr> 
                 </tbody>
             </table>

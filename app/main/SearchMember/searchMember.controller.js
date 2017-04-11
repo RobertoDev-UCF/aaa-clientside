@@ -22,6 +22,7 @@
             }
 
             function AddCustomer() {
+                sessionStorage.setItem('customerPhoneNumber', vm.InputMemberNumber);
                 $state.go('appLayout.addCustomer');
             }
 			

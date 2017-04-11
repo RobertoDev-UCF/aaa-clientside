@@ -20,15 +20,22 @@
                 });
 
                 promise.then(function(result) {
+                    sessionStorage.setItem('customerPhoneNumber', null);
                     $state.go('appLayout.searchMember');
                 }).catch(function(err) {
                     console.log(err);
                 });
         }
 
+        function getPhoneNumber() {
+            return sessionStorage.getItem('customerPhoneNumber');
+        }
+
         activate();
 
-        function activate() { vm.Customer = {}; }
+        function activate() { 
+            vm.Customer = {p_phone: getPhoneNumber(), p_alert_sms: false, p_alert_email: false}; 
+        }
             
     }
 })();

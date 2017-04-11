@@ -71,9 +71,11 @@
                         <th>City</th>
                         <th>State</th>
                         <th>Postal Code</th>
-			<th>Email Alert</th>
-			<th>Text Alert</th>
-
+                        <th></th>
+                        <!--
+			            <th>Email Alert</th>
+			            <th>Text Alert</th> 
+                        -->
                     </tr>
                 </thead>
                 <tbody>
@@ -86,10 +88,13 @@
                         <td>{{member.city}}</td>
                         <td>{{member.state}}</td>
                         <td>{{member.postal_code}}</td>
-			<td ng-if="member.alert_email > 0">Yes</td>
-			<td ng-if="member.alert_email < 1">No</td>
-			<td ng-if="member.alert_sms > 0">Yes</td>
-			<td ng-if="member.alert_sms < 1">No</td>
+                        <td> <button class="btn btn-primary btn-sm" ng-click="vm.AddCustomerToQueue(member);"> Add To Queue </button> </td>
+			            <!-- Till further notice
+                        <td ng-if="member.alert_email > 0">Yes</td>
+			            <td ng-if="member.alert_email < 1">No</td>
+			            <td ng-if="member.alert_sms > 0">Yes</td>
+			            <td ng-if="member.alert_sms < 1">No</td> 
+                        --> 
                     </tr> 
                 </tbody>
             </table>

@@ -8,29 +8,56 @@
 
     function AddCustomerToQueueController($http, $state) {
         var vm = this;
- 
-        vm.AddCustomer = AddCustomer;
 
-        function AddCustomer() {
-            vm.Customer.p_alert_email = true;
-            vm.Customer.p_alert_sms = true;
+        vm.AddToQueue = AddToQueue;
+
+        function AddToQueue() {
+            if(!getCustomerId()) {alert('Customerid is not valid'); return;}
+
+            if(!vm.ServiceType) {alert('Service type not selected'); return;}
 
             var promise = $http({
-                    method: 'POST',
-                    url: "http://localhost:3050/InsertCustomer",
-                    data: vm.Customer
-                });
+                url: 'http://localhost:3050/InsertCustomerToQueue',
+                method: 'POST',
+                data: {p_customer_id: getCustomerId(), p_service_id: vm.ServiceType, p_note: vm.Notes}
+            });
+            
+            promise.then(function(data) {
+                clearCustomerIdFromStorage();
+                $state.go('appLayout.getQueue');
+            }).catch(function() {
+                alert('Member/Customer exists in the queue');
+            });
+        }
 
-                promise.then(function(result) {
-                    $state.go('appLayout.searchMember');
-                }).catch(function(err) {
-                    console.log(err);
-                });
+        function getServiceTypes() {
+            return $http({
+                url: 'http://localhost:3050/GetServiceTypes',
+                method: 'GET'
+            });
+        }
+
+        function getCustomerId() {
+            return sessionStorage.getItem('customerId');
+        }
+
+        function clearCustomerIdFromStorage() {
+            sessionStorage.setItem('customerId', 0);
         }
 
         activate();
 
-        function activate() { vm.Customer = {}; }
+        function activate() { 
+            vm.Customer = {}; 
+
+            getServiceTypes().then(function(data) {
+                vm.ServiceTypes = (data) ? data.data : [];
+            }).catch(function(err) {  
+                alert(err);
+            });    
+
+            getCustomerId();      
+        }
             
     }
 })();

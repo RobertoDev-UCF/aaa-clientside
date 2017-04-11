@@ -7,22 +7,28 @@
 
 
 <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <label> Service Types </label>
+            <select ng-model="vm.ServiceType" class="form-control input-lg" ng-options="t.service_id as t.type for t in vm.ServiceTypes"> </select>
+        </div>
+    </div> 
 
- <div class="row"> 
-
-</div>
-
- </br>
- </br>
-
+    <br />
+    
+    <div class="row">
+        <div class="col-md-12">  
+            <label> Additional Notes </label>
+            <textarea rows="4" ng-model="vm.Notes" class=form-control> </textarea>
+        </div>    
+    </div>
+    
+    <br />
 
     <div class="row">
-
-        <div class="col-md-12">
-            <h3>Test User</h3>
-        </div>
-
+        <div class="col-md-12">  
+            <button class="btn btn-primary btn-lg" ng-click="vm.AddToQueue();">Add To Queue</button>
+        </div>    
     </div>
-
 
 </div>

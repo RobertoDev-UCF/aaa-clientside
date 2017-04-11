@@ -13,6 +13,12 @@
 			vm.SearchByMemberId = SearchByMemberId;
             vm.AddCustomer = AddCustomer;
 			vm.GetQueue = GetQueue;
+            vm.AddCustomerToQueue = AddCustomerToQueue;
+
+            function AddCustomerToQueue(member) {
+                sessionStorage.setItem('customerId', member.customer_id);
+                $state.go('appLayout.addCustomerToQueue');
+            }
 
             function AddCustomer() {
                 $state.go('appLayout.addCustomer');

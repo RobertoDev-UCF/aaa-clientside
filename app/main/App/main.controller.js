@@ -24,7 +24,7 @@
             }
 
             function setTweenObjects() {
-                new TWEEN.Tween({x: 0, y: -150, rotation: 0}).to({x: 0, y: 0, rotation:0}, 1000).easing(TWEEN.Easing.Elastic.Out).onUpdate(updateTweenElement.apply({element: getHomeHeaderElement()})).start();
+                new TWEEN.Tween({x: 0, y: -150, rotation: 0}).to({x: 0, y: 0, rotation:0}, 10000).easing(TWEEN.Easing.Elastic.Out).onUpdate(updateTweenElement.apply({element: getHomeHeaderElement()})).start();
                 new TWEEN.Tween({x: 0, y: 200}).to({x: 0, y: 18}, 500).easing(TWEEN.Easing.Elastic.Out).onUpdate(updateTweenElement.apply({element: getHomeButtonElement()})).start();
             }
 

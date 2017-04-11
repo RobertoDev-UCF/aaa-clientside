@@ -19,7 +19,7 @@
 			});
 			promise.then(function(result) {
 				console.log(result);
-				setQueueResults(result.data);
+				setQueueResults(result.data[0]);
 			}).catch(function(err) {
 				console.log(err);
 				setQueueResults([]);
@@ -35,8 +35,6 @@
 				if(value[i].create_date !=null) {
 					value[i].create_date = new Date(value[i].create_date).toLocaleString();
 				}
-
-				console.log(value[i].last_update);
 			}
 
 			vm.QueueResults = value;

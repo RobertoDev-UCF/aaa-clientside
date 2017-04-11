@@ -17,6 +17,7 @@
 
             function AddCustomerToQueue(member) {
                 sessionStorage.setItem('customerId', member.customer_id);
+                sessionStorage.setItem('fullName', member.first_name + " " + member.last_name);
                 $state.go('appLayout.addCustomerToQueue');
             }
 

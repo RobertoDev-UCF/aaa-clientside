@@ -12,7 +12,7 @@
         vm.AddToQueue = AddToQueue;
 
         function AddToQueue() {
-            if(!getCustomerId()) {alert('Customerid is not valid'); return;}
+            if(getCustomerId() == "0") {alert('Customerid is not valid'); return;}
 
             if(!vm.ServiceType) {alert('Service type not selected'); return;}
 
@@ -41,15 +41,19 @@
             return sessionStorage.getItem('customerId');
         }
 
+        function getCustomerName() {
+            return sessionStorage.getItem('fullName');
+        }
+
         function clearCustomerIdFromStorage() {
             sessionStorage.setItem('customerId', 0);
+            sessionStorage.setItem('fullName', "");
         }
 
         activate();
 
         function activate() { 
-            vm.Customer = {}; 
-
+            vm.CustomerName = getCustomerName();
             getServiceTypes().then(function(data) {
                 vm.ServiceTypes = (data) ? data.data : [];
             }).catch(function(err) {  

@@ -89,6 +89,7 @@
                         <td>{{member.state}}</td>
                         <td>{{member.postal_code}}</td>
                         <td> <button class="btn btn-primary btn-sm" ng-click="vm.AddCustomerToQueue(member);"> Add To Queue </button> </td>
+						<td> <button class="btn btn-primary btn-sm" ng-click="vm.EditCustomer(member);"> Edit Customer </button> </td>
 			            <!-- Till further notice
                         <td ng-if="member.alert_email > 0">Yes</td>
 			            <td ng-if="member.alert_email < 1">No</td>
@@ -104,7 +105,7 @@
     <div class="row" ng-if="vm.MemberResults && vm.MemberResults.length === 0">
         <div class="col-md-12">
             <div style="text-align: center;"> 
-                <p style="padding: 15px;font-size:16px;" class="bg-warning">Member or customer not found! Select Add Customer</p>
+                <p style="padding: 15px;font-size:16px;" class="bg-warning">Member or customer not found!</p>
                 <i ng-click="vm.AddCustomer();" style="font-size:5em;color:#5cb85c; text-align: right;" class="fa fa-user-plus fa-5" aria-hidden="true"></i>
             </div>
         </div>

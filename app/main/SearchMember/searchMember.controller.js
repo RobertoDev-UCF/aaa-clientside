@@ -14,6 +14,22 @@
             vm.AddCustomer = AddCustomer;
 			vm.GetQueue = GetQueue;
             vm.AddCustomerToQueue = AddCustomerToQueue;
+			vm.EditCustomer = EditCustomer;
+			
+			function EditCustomer(member) {
+				sessionStorage.setItem('customerId', member.customer_id);
+				sessionStorage.setItem('firstName', member.first_name);
+				sessionStorage.setItem('lastName', member.last_name);
+				sessionStorage.setItem('customerPhoneNumber', member.phone);
+				sessionStorage.setItem('email', member.email);
+				sessionStorage.setItem('address', member.address);
+				sessionStorage.setItem('city', member.city);
+				sessionStorage.setItem('state', member.state);
+				sessionStorage.setItem('postalCode', member.postal_code);
+				sessionStorage.setItem('emailAlert', member.alert_email);
+				sessionStorage.setItem('smsAlert', member.alert_sms);
+				$state.go('appLayout.editCustomer');
+			}
 
             function AddCustomerToQueue(member) {
                 sessionStorage.setItem('customerId', member.customer_id);

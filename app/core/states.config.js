@@ -47,6 +47,13 @@
 				templateUrl: 'app/main/GetQueue/getQueue.html',
 				controller: 'GetQueueController',
 				controllerAs: 'vm'
+			})
+			
+			.state('appLayout.editCustomer', {
+				url: '/editCustomer',
+				templateUrl: 'app/main/EditCustomer/editCustomer.html',
+				controller: 'EditCustomerController',
+				controllerAs: 'vm'
 			});
         }
 

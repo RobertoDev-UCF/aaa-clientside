@@ -1,0 +1,120 @@
+
+<div class="jumbotron" style="background-color:#0275d8;">
+    <div class="container" style="color:#fff;">
+        <h3> Edit customer <small style="color:#fff;"> </small> </h3>
+    </div>
+</div>  
+
+
+
+<div class="container">
+
+ <div class="row"> 
+    <div class="col-md-12">
+         <div class="pull-right">
+            <button class="btn btn-primary btn-lg" ng-click="vm.UpdateCustomer();"> Save </button>
+        </div>
+    </div>
+</div>
+
+ </br>
+ </br>
+
+    <div class="row"> 
+
+        <div class="col-md-4"> 
+            <input class="form-control" ng-model="vm.Customer.p_first_name" />
+            </br>
+            </br>
+        </div>
+        
+        <div class="col-md-4"> 
+            <input class="form-control" ng-model="vm.Customer.p_last_name" />
+             </br>
+             </br>
+        </div>
+        
+        <div class="col-md-4"> 
+            <input class="form-control" ng-model="vm.Customer.p_email"  />
+             </br>
+             </br>
+        </div>
+    
+     </div>
+
+     
+
+     <div class="row"> 
+
+        <div class="col-md-4"> 
+            <input class="form-control" ng-model="vm.Customer.p_phone" ui-mask="(999) 999-9999" />
+             </br>
+              </br>
+        </div>
+        
+        <div class="col-md-4"> 
+            <input class="form-control" ng-model="vm.Customer.p_address"  />
+              </br>
+              </br>
+        </div>
+        
+        <div class="col-md-4"> 
+            <input class="form-control" ng-model="vm.Customer.p_city"  />
+             </br>
+              </br>
+        </div>
+    
+     </div>
+
+      <div class="row"> 
+
+        <div class="col-md-4"> 
+            <input class="form-control" ng-model="vm.Customer.p_state"  />
+            </br>
+             </br>
+        </div>
+        
+        <div class="col-md-4"> 
+            <input class="form-control" ng-model="vm.Customer.p_postal_code"  />
+            </br>
+             </br>
+        </div>
+     </div>
+	 
+     <div class="row">  
+        <div class="col-md-12">
+            <label>
+                <input type="checkbox" ng-model="vm.Customer.p_alert_email">
+                 Enable Email Alerts
+            </label>
+        </div>
+     </div>
+
+     <br />
+     
+     <div class="row">  
+         <div class="col-md-6">
+            <label>
+                <input type="checkbox" ng-model="vm.Customer.p_alert_sms" />
+                Enable Text Alerts
+            </label>
+        </div>
+     </div>
+    
+    <br />
+
+     <!--
+	 <div class="row"> 
+		<div class="col-md=4 form-control">
+			<input type="checkbox" id="emailalerts" ng-model="vm.Customer.p_alert_email" style="text-align: center;">
+			<label for="emailalerts">Email Alerts</label>
+		</div>
+		
+		</br>
+		<div class="col-md=4 form-control">
+			<input type="checkbox" id="smsalerts" ng-model="vm.Customer.p_alert_sms" style="text-align: center;">
+			<label for="smsalerts">Text Alerts</label>
+		</div>
+     </div>
+-->
+</div>

@@ -15,7 +15,7 @@
 			
 			var promise = $http({
 				method: 'POST',
-				url: "http://localhost:3050/UpdatedCustomer",
+				url: "http://localhost:3050/UpdateCustomer",
 				data: vm.Customer
 			});
 			

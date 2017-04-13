@@ -31,9 +31,10 @@
 				$state.go('appLayout.editCustomer');
 			}
 
-            function AddCustomerToQueue(member) {
-                sessionStorage.setItem('customerId', member.customer_id);
-                sessionStorage.setItem('fullName', member.first_name + " " + member.last_name);
+            function AddCustomerToQueue(customer) {
+                sessionStorage.setItem("customer", JSON.stringify(customer));
+                sessionStorage.setItem('customerId', customer.customer_id);
+                sessionStorage.setItem('fullName', customer.first_name + " " + customer.last_name);
                 $state.go('appLayout.addCustomerToQueue');
             }
 

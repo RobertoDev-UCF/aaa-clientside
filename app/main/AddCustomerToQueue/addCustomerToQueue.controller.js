@@ -16,17 +16,25 @@
 
             if(!vm.ServiceType) {alert('Service type not selected'); return;}
 
+            var customer = getCustomer();
+
             var promise = $http({
                 url: 'http://localhost:3050/InsertCustomerToQueue',
                 method: 'POST',
-                data: {p_customer_id: getCustomerId(), p_service_id: vm.ServiceType, p_note: vm.Notes}
+                data: {
+                    p_customer_id: customer.customer_id,
+                    p_first_name: customer.first_name,
+                    p_last_name: customer.last_name,
+                    p_phone: customer.phone,
+                    p_service_id: vm.ServiceType,
+                    p_note: vm.Notes}
             });
             
             promise.then(function(data) {
                 clearCustomerIdFromStorage();
                 $state.go('appLayout.getQueue');
             }).catch(function() {
-                alert('Member/Customer exists in the queue');
+                alert('Customer exists in the queue.');
             });
         }
 
@@ -35,6 +43,11 @@
                 url: 'http://localhost:3050/GetServiceTypes',
                 method: 'GET'
             });
+        }
+
+        function getCustomer() {
+            var customer = sessionStorage.getItem("customer");
+            return JSON.parse(customer);
         }
 
         function getCustomerId() {
@@ -52,15 +65,17 @@
 
         activate();
 
-        function activate() { 
-            vm.CustomerName = getCustomerName();
+        function activate() {
+            var customer = getCustomer();
+            vm.CustomerName = customer.first_name + " " + customer.last_name;
+
             getServiceTypes().then(function(data) {
                 vm.ServiceTypes = (data) ? data.data : [];
             }).catch(function(err) {  
                 alert(err);
-            });    
+            });
 
-            getCustomerId();      
+            getCustomerId();
         }
             
     }

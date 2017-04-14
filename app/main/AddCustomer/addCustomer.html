@@ -21,7 +21,11 @@
  </br>
 
     <div class="row"> 
-
+		
+		<div class="col-md-4">
+			<input class="form-control"  placeholder="Customer ID" readonly/>
+		</div>
+	
         <div class="col-md-4"> 
             <input class="form-control" placeholder="First Name" ng-model="vm.Customer.p_first_name" />
             </br>
@@ -34,11 +38,7 @@
              </br>
         </div>
         
-        <div class="col-md-4"> 
-            <input class="form-control" placeholder="Email" ng-model="vm.Customer.p_email"  />
-             </br>
-             </br>
-        </div>
+        
     
      </div>
 
@@ -46,6 +46,12 @@
 
      <div class="row"> 
 
+		<div class="col-md-4"> 
+            <input class="form-control" placeholder="Email" ng-model="vm.Customer.p_email"  />
+             </br>
+             </br>
+        </div>
+		
         <div class="col-md-4"> 
             <input class="form-control" ng-model="vm.Customer.p_phone" ui-mask="(999) 999-9999" />
              </br>
@@ -58,15 +64,17 @@
               </br>
         </div>
         
-        <div class="col-md-4"> 
-            <input class="form-control" placeholder="City" ng-model="vm.Customer.p_city"  />
-             </br>
-              </br>
-        </div>
+        
     
      </div>
 
       <div class="row"> 
+	  
+		<div class="col-md-4"> 
+            <input class="form-control" placeholder="City" ng-model="vm.Customer.p_city"  />
+             </br>
+              </br>
+        </div>
 
         <div class="col-md-4"> 
             <input class="form-control" placeholder="State" ng-model="vm.Customer.p_state"  />
@@ -82,26 +90,21 @@
      </div>
 	 
      <div class="row">  
-        <div class="col-md-12">
+        <div class="col-md-4">
             <label>
                 <input type="checkbox" ng-model="vm.Customer.p_alert_email">
                  Enable Email Alerts
             </label>
         </div>
-     </div>
-
-     <br />
-     
-     <div class="row">  
-         <div class="col-md-6">
+		
+		 <div class="col-md-4">
             <label>
                 <input type="checkbox" ng-model="vm.Customer.p_alert_sms" />
                 Enable Text Alerts
             </label>
         </div>
      </div>
-    
-    <br />
+  
 
      <!--
 	 <div class="row"> 

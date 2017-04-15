@@ -11,6 +11,25 @@
 		vm.QueueResults = undefined;
 		
 		vm.UpdateQueue = UpdateQueue;
+		vm.RemoveFromQueue = RemoveFromQueue;
+		
+		function RemoveFromQueue(customer) {
+			
+			var promise = $http({
+				method: 'POST',
+				url: "http://localhost:3050/DeleteQueueByCustomerId",
+				data: customer
+			});
+			
+			promise.then(function(result) {
+				console.log(result);
+				UpdateQueue();
+			}).catch(function(err) {
+				console.log(err);
+			});
+			
+			
+		}
 		
 		function UpdateQueue() {
 			var promise = $http({

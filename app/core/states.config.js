@@ -54,7 +54,13 @@
 				templateUrl: 'app/main/EditCustomer/editCustomer.html',
 				controller: 'EditCustomerController',
 				controllerAs: 'vm'
-			});
+			})
+            .state('appLayout.customerQueue', {
+               url:'/customerQueue/:id',
+               templateUrl:'app/main/Confirmation/Confirmation.html',
+               controller: 'ConfirmationController',
+               controllerAs: 'vm'
+            });
         }
 
 })();

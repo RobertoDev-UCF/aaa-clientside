@@ -4,54 +4,44 @@
 		.module(angularModuleName)
 		.controller('ConfirmationController', ConfirmationController);
 	
-	ConfirmationController.$inject = ['$http', '$state'];
+	ConfirmationController.$inject = ['$http', '$state', '$stateParams'];
 	
-	function ConfirmationController($http, $state) {
+	function ConfirmationController($http, $state,$stateParams) {
 		var vm = this;
-		vm.ConfirmationResult = undefined;
-		vm.GetService = GetService;
+		vm.customerQueue = undefined;
+		vm.GetCustomerQueue = getCustomerQueue;
 		
-		function GetService() {
-			
-			GetServiceId();
+		function getCustomerQueue() {
 			
 			var promise = $http({
-				method: 'POST',
-				url: "http://localhost:3050/GetQueueByServiceId",
-				data: vm.serviceId
+				method: 'GET',
+				url: "http://localhost:3050/GetQueueByCustomerId/" + getCustomerId()
 			});
 			
 			promise.then(function(result) {
 				console.log(result);
-				vm.ConfirmationResult = result.data[0];
+				vm.customerQueue = result.data[0];
 			}).catch(function(err) {
 				console.log(err);
 			});
-			
-			
 		}
-		
-		function GetServiceId() {
-			
-			var GET = {};
-            var query = $location.path().substring(1).split("&");
-            for (var i = 0, max = query.length; i < max; i++)
-            {
-              if (query[i] === "") // check for trailing & with no param
-                 continue;
 
-                var param = query[i].split("=");
-                GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
-}
-			
-			vm.serviceId = {service_id : GET.Use_id};
-		}
-		
-	
 		activate();
 	
+
+
+		/**
+		 * Private functions
+		 */
+
 		function activate() {
-			GetService();
+			getCustomerQueue();
 		}
+
+		function getCustomerId() {
+			var customerId = $stateParams.id;
+			return customerId;
+		}
+
 	}
 })();

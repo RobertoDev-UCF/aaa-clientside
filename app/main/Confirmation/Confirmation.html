@@ -1,7 +1,32 @@
 <div class="jumbotron" style="background-color:#0275d8;">
- <p ng-repeat="service in vm.ConfirmationResult">
- {{service.type}}
- </p>
- 
+ <div class="container" style="color:#fff;">
+  <h3>
+   Hello <span>{{vm.customerQueue.first_name}} {{vm.customerQueue.first_name}}.</span>
+  </h3>
  </div>
+</div>
+
+<div class="container">
+
+ <div class="row">
+  <div class="col-md-12">
+
+  </div>
+  <div class="col-md-12">
+   <h4>
+    Your Position in line is:  <span>{{vm.customerQueue.position}}</span>
+   </h4>
+  </div>
+  <div class="col-md-12">
+   <h4>
+    You are currently waiting to speak to an agent about: <span>{{vm.customerQueue.type}}.</span>
+   </h4>
+  </div>
+  <div class="col-md-12">
+   <h4>
+    You will recieve a text message at the following number, <span>{{vm.customerQueue.phone}}</span>, when an agent is available. Thank you.
+   </h4>
+  </div>
+ </div>
+</div>
  

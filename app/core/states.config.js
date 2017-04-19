@@ -44,7 +44,7 @@
             })
 			.state('appLayout.getQueue', {
 				url: '/getQueue',
-				templateUrl: 'app/main/GetQueue/getQueue.html',
+				templateUrl: 'app/main/GetQueue/getGQueue.html',
 				controller: 'GetQueueController',
 				controllerAs: 'vm'
 			})

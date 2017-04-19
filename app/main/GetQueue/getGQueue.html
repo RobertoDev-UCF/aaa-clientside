@@ -1,0 +1,62 @@
+<div class="jumbotron" style="background-color:#0275d8;">
+    <div class="container" style="color:#fff;">
+        <h3> Customers waiting to see an agent </h3>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12"> 
+            <i ng-click="vm.UpdateQueue();" class="fa fa-refresh" 
+                style="font-size:20px; color: #5cb85c"></i> 
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row" ng-if="vm.OrderedQueueResults && vm.OrderedQueueResults.length > 0 && serviceArray.length > 0" 
+            ng-repeat="serviceArray in vm.OrderedQueueResults">
+
+        <div class="col-md-12"> 
+            <div> 
+                <h3 style="color:#2e618d;border-bottom: 1px solid #428bca"> 
+                    {{serviceArray[0].service}} <small style="color:#82312f"> ({{serviceArray.length}}) </small>
+                </h3> 
+            </div>
+            <table class="table table-condensed table-striped table-hover">
+                <thead>
+                        <th>Line Position</th>
+                        <th>Full Name</th>
+                        <th>Service</th>
+                        <th>Added</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="customer in serviceArray">
+                        <td>{{customer.position}}</td>
+                        <td>{{customer.customer}}</td>
+                        <td>{{customer.service}}</td>
+                        <td>{{customer.create_date}}</td>
+                        <td><button class="btn btn-success btn-sm" ng-click="vm.RemoveFromQueue(customer);" >Complete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+    </div>
+
+    <div class="row" ng-if="vm.OrderedQueueResults && vm.OrderedQueueResults.length === 0">
+        <div class="col-md-12">
+            <div style="text-align: center;">
+                    <p style="padding: 15px; color:#000000; font-size: 16px;" class="bg-warning">No customers in queue!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+</div>

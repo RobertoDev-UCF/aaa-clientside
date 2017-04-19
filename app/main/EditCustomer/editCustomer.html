@@ -23,18 +23,21 @@
     <div class="row"> 
 
 		<div class="col-md-4">
-			<input class="form-control" ng-model="vm.Customer.p_customer_id" ui-mask="9999-9999-9999-9999" readonly/>
+            <label>Customer Id</label>
+			<input class="form-control" ng-model="vm.Customer.p_customer_id" ui-mask="9999-9999-9999-9999" ng-disabled="true"/>
 			</br>
 			</br>
 		</div>
 		
-        <div class="col-md-4"> 
+        <div class="col-md-4">
+            <label>First Name</label>
             <input class="form-control" ng-model="vm.Customer.p_first_name" />
             </br>
             </br>
         </div>
         
-        <div class="col-md-4"> 
+        <div class="col-md-4">
+            <label>Last Name</label>
             <input class="form-control" ng-model="vm.Customer.p_last_name" />
              </br>
              </br>
@@ -46,19 +49,22 @@
 
      <div class="row"> 
 	 
-		<div class="col-md-4"> 
+		<div class="col-md-4">
+            <label>Email</label>
             <input class="form-control" ng-model="vm.Customer.p_email"  />
              </br>
              </br>
         </div>
 
-        <div class="col-md-4"> 
+        <div class="col-md-4">
+            <label>Phone</label>
             <input class="form-control" ng-model="vm.Customer.p_phone" ui-mask="(999) 999-9999" />
              </br>
               </br>
         </div>
         
-        <div class="col-md-4"> 
+        <div class="col-md-4">
+            <label>Address</label>
             <input class="form-control" ng-model="vm.Customer.p_address"  />
               </br>
               </br>
@@ -68,19 +74,22 @@
 
       <div class="row">
 	  
-		<div class="col-md-4"> 
+		<div class="col-md-4">
+            <label>City</label>
             <input class="form-control" ng-model="vm.Customer.p_city"  />
              </br>
               </br>
         </div>
 
-        <div class="col-md-4"> 
+        <div class="col-md-4">
+            <label>State</label>
             <input class="form-control" ng-model="vm.Customer.p_state"  />
             </br>
              </br>
         </div>
         
-        <div class="col-md-4"> 
+        <div class="col-md-4">
+            <label>Postal code</label>
             <input class="form-control" ng-model="vm.Customer.p_postal_code"  />
             </br>
              </br>
@@ -102,6 +111,7 @@
             </label>
         </div>
      </div>
+    <div style="margin-top:100px;"></div>
 
      <!--
 	 <div class="row"> 

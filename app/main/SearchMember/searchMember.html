@@ -1,4 +1,3 @@
-
 <div class="jumbotron" style="background-color:#0275d8;">
     <div class="container" style="color:#fff;">
         <!--<h3>Find a member or customer ? <small style="color:#fff;"> Search for customer below by member id or phone number</small> </h3> -->
@@ -8,6 +7,51 @@
 </div> 
 
 <div class="container">
+
+<div class="row" ng-show="vm.ShowSearchOptions">
+    <div class="col-md-4" style="padding-bottom:20px;" ng-click="vm.SelectSearchOption('SMemberId');"> 
+        <div class="searchBoxes"> 
+            <div style="text-align:center;">
+                <i style="font-size:75px;padding-top:25px;" class="fa fa-user" aria-hidden="true"></i>
+                <p style="padding-top:35px;"> Search by member id </p>
+             </div>
+        </div>
+    </div>
+    <div class="col-md-4" style="padding-bottom:20px;" ng-click="vm.SelectSearchOption('SPhoneNumber');"> 
+        <div class="searchBoxes"> 
+            <div style="text-align:center;">
+                <i style="font-size:75px;padding-top:25px;" class="fa fa-mobile" aria-hidden="true"></i>
+                
+                <p style="padding-top:35px;"> Search by phone number </p>
+             </div>
+        </div>
+    </div>
+    <div class="col-md-4" style="padding-bottom:20px;" ng-click="vm.SelectSearchOption('SMemberName');"> 
+        <div class="searchBoxes"> 
+            <div style="text-align:center;">
+                <i style="font-size:75px;padding-top:25px;" class="fa fa-phone" aria-hidden="true"></i>
+                <p style="padding-top:35px;"> Search by member name </p>
+             </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-show="!vm.ShowSearchOptions"> 
+    <div class="col-md-12">
+        <div ng-click="vm.BackToSearchOptions();" style="padding-bottom:12px;"> 
+            <i style="font-size:26px;" class="fa fa-angle-double-left" aria-hidden="true"></i>
+            Back 
+        </div>
+
+         <input ng-model="vm.InputMemberNumber" ng-keyup="vm.KeyUpPhoneNumberSearch();" ng-show="vm.SPhoneNumber" style="text-align: center;" type="text" class="form-control input-lg" ui-mask="(999) 999-9999"> 
+         <input style="text-align: center;" ng-keyup="vm.KeyUpMemberIdSearch();" ng-model="vm.InputMemberId" ng-show="vm.SMemberId" type="text" class="form-control input-lg" ui-mask="9999-9999-9999-9999">
+
+    </div>
+</div>
+
+
+
+<!--
 
     <div class="row">
         <div class="col-md-12">
@@ -56,6 +100,8 @@
         </div>
     </div>
 	
+    -->
+
 </br>
 
     <div class="row" ng-if="vm.MemberResults && vm.MemberResults.length > 0">
@@ -115,4 +161,11 @@
     </br>
 	
 </div>
+
+
+
+
+
+
+
 

@@ -1,3 +1,5 @@
+
+
 (function() {
 
     angular
@@ -15,7 +17,38 @@
 			vm.GetQueue = GetQueue;
             vm.AddCustomerToQueue = AddCustomerToQueue;
 			vm.EditCustomer = EditCustomer;
-			
+			vm.SelectSearchOption = SelectSearchOption;
+            vm.KeyUpPhoneNumberSearch = KeyUpPhoneNumberSearch;
+            vm.KeyUpMemberIdSearch = KeyUpMemberIdSearch;
+            vm.BackToSearchOptions = BackToSearchOptions; 
+
+            function BackToSearchOptions() {
+                vm.ShowSearchOptions = true;
+                vm.InputMemberId = "";
+                vm.InputMemberNumber = ""; 
+                vm.MemberResults = null;
+            }
+
+
+            function KeyUpMemberIdSearch() {
+                var id = vm.SMemberId;
+                if(!id || id.length < 16) return;
+                SearchByMemberId();
+            }
+
+            function KeyUpPhoneNumberSearch() {
+                var p = vm.InputMemberNumber;
+                if(!p || p.length < 9) return;
+                SearchForMember();
+            }
+
+            function SelectSearchOption(name) {
+                vm.ShowSearchOptions = false;
+                vm.SPhoneNumber = false;
+                vm.SMemberId = false;
+                vm[name] = true;
+            }
+
 			function EditCustomer(member) {
 				sessionStorage.setItem('customerId', member.customer_id);
 				sessionStorage.setItem('firstName', member.first_name);
@@ -95,9 +128,13 @@
                 vm.MemberResults = value;
             }
 
+
+
             activate();
 
-            function activate() {  }
+            function activate() {
+                vm.ShowSearchOptions = true;
+             }
             // change here
             
         }        
